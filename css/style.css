@@ -46,5 +46,135 @@ body {
     background-position: top;
     /* cut wedge at bottom of image */
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    /* for logo positioning */
+    position: relative;
+}
+
+/* Logo */
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
+}
+
+/* Heading */
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* to position everything to center */
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+
+    /* to help with animation shaking */
+    backface-visibility: hidden;
+    margin-bottom: 60px;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+
+    /* animation */
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /* slower at the end */
+    animation-timing-function: ease-out;
     
+    /*
+    animation-delay: 3s;
+    animation-iteration-count: 3;
+    */
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 17.4px;
+    /* animation (shorthand) */
+    animation: moveInRight 1s ease-out;
+}
+
+/* heading animation */
+
+@keyframes moveInLeft {
+    /* animation begin */
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    /* push right before settling back */
+    80% {
+        transform: translateX(10px);
+    }
+
+    /* animation finish */
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    /* animation begin */
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    /* push right before settling back */
+    80% {
+        transform: translateX(-10px);
+    }
+
+    /* animation finish */
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* Header button styles */
+
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    /* animate all */
+    transition: all .2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+
+/* on click */
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
 }
