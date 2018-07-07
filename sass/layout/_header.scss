@@ -1,0 +1,41 @@
+/* Header Element */
+
+.header {
+  /* 95% of viewport height */
+  height: 95vh;
+  /* create gradient and background img */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/hero.jpg);
+  background-size: cover;
+  /* ensures top of image stays at top of container - crops bottom/side */
+  background-position: top;
+  /* cut wedge at bottom of image */
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* for logo positioning */
+  position: relative;
+
+  //Logo
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem;
+  }
+
+  //Heading text
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* to position everything to center */
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}

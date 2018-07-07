@@ -1,0 +1,26 @@
+/* Basic Reset */
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* set root properties */
+/* set to 10px by dividing 10px by default 16px  = 62.5% */
+/* by setting to 10 you can divide all your settings by 10 to set as rem */
+html {
+  font-size: 62.5%;
+}
+
+/* 
+* overall font properties 
+* inherited by all child properties in body
+*/
+
+body {
+  /* Change box model so borders and paddings not added to total height */
+  box-sizing: border-box;
+}
