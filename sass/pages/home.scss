@@ -31,7 +31,13 @@
 //tours section
 .section-tours {
   background-color: $color-grey-light-1;
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 15rem 0;
   //move up to close gap
   margin-top: -10rem;
+}
+
+//tours section
+.section-stories {
+  background-color: $color-grey-light-1;
+  padding: 0 0 15rem;
 }
