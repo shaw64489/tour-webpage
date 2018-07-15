@@ -19,6 +19,11 @@
   /* for logo positioning */
   position: relative;
 
+  @include respond(phone) {
+    /* cut wedge at bottom of image */
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
   //Logo
   &__logo-box {
     position: absolute;

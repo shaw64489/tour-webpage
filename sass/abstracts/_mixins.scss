@@ -11,3 +11,62 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+// MEDIA QUERY MANAGER
+
+/*
+
+0 - 600px :        PHONE
+
+600 - 900px :      TABLET PORTRAIT MODE
+
+900 - 1200px :     TABLET LANDSCAPE MODE
+
+[1200 - 1800px] :  NORMAL STYLES APPLIES
+
+1800+px :          BIG SCREEN DESKTOPS
+
+
+//for managing all breakpoints
+
+/*
+$breakpoint argument choices
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + Typography > general layout + grid > page layout > components
+
+1em = 16px
+
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    //600px
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    //900px
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    //1200px
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == big-desktop {
+    //1800px
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}
